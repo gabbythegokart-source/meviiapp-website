@@ -159,6 +159,23 @@
     .mevii .tier b { font-size: 22px; }
     .mevii .tier span { font-size: 8px; }
   }
+
+  /* Top navigation, pinned while scrolling */
+  .mevii .topnav { position: sticky; top: 0; z-index: 50; background: var(--ink); }
+  .mevii .topnav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 60px; }
+  .mevii .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .mevii .brand img { width: 34px; height: 34px; border-radius: 9px; }
+  .mevii .brand span { font-size: 24px; font-weight: 900; letter-spacing: -1px; color: #ff7aa8; }
+  .mevii .navlinks { display: flex; gap: 4px; }
+  .mevii .navlinks a { color: #ffe4ef; text-decoration: none; font-size: 15px; font-weight: 800; padding: 8px 12px; border-radius: 999px; }
+  .mevii .navlinks a:hover { background: rgba(255, 255, 255, 0.12); }
+  .mevii .navlinks a[aria-current="page"] { background: var(--pink); color: var(--white); }
+  @media (max-width: 420px) {
+    .mevii .topnav .wrap { height: 56px; padding: 0 12px; }
+    .mevii .brand img { width: 30px; height: 30px; }
+    .mevii .brand span { font-size: 20px; }
+    .mevii .navlinks a { font-size: 14px; padding: 7px 10px; }
+  }
 </style>
 <style>
   .mevii .contact-hero { padding: 56px 0 40px; text-align: center; }
@@ -179,6 +196,16 @@
 </style>
 
 <div class="mevii">
+  <nav class="topnav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="mevii home"><img src="/logo.png" alt="" width="34" height="34" /><span>mevii</span></a>
+      <div class="navlinks">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/contact/" aria-current="page">Contact</a>
+      </div>
+    </div>
+  </nav>
   <div class="strip" aria-hidden="true"></div>
 
   <section class="contact-hero">
