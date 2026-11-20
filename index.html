@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>mevii: a new way to enjoy what you watch</title>
+  <meta name="description" content="Your screentime just got a scoreboard. Log every movie and show, find your next favorite faster, and make every watch an experience." />
+  <meta property="og:title" content="mevii: a new way to enjoy what you watch" />
+  <meta property="og:description" content="Your screentime just got a scoreboard. Log every movie and show, find your next favorite faster, and make every watch an experience." />
+  <meta property="og:image" content="https://meviiapp.com/logo.png" />
+  <meta name="theme-color" content="#2B0B24" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <style>html, body { margin: 0; padding: 0; background: #ffe4ef; } html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+<style>
+  .mevii {
+    --pink-bg: #ffe4ef;
+    --pink-soft: #ffcadf;
+    --pink-line: #f2a0c2;
+    --pink: #c2185b;
+    --ink: #2b0b24;
+    --muted: #6b3a5c;
+    --white: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--pink-bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mevii *,
+  .mevii *::before,
+  .mevii *::after { box-sizing: border-box; }
+  .mevii a { color: inherit; }
+  .mevii .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* Film strip edge, like the logo */
+  .mevii .strip {
+    height: 26px;
+    background: var(--ink);
+    background-image: repeating-linear-gradient(90deg, transparent 0 14px, var(--pink-bg) 14px 32px, transparent 32px 46px);
+    background-size: 46px 10px;
+    background-repeat: repeat-x;
+    background-position: 0 center;
+  }
+
+  /* Hero */
+  .mevii .hero { padding: 64px 0 56px; text-align: center; }
+  .mevii .logo { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 14px 36px rgba(43, 11, 36, 0.25); }
+  .mevii .wordmark { margin: 18px 0 0; font-size: 56px; font-weight: 900; letter-spacing: -2px; color: var(--pink); line-height: 1; }
+  .mevii h1 { margin: 18px auto 0; max-width: 760px; font-size: 44px; line-height: 1.1; font-weight: 900; letter-spacing: -1px; }
+  .mevii .sub { margin: 18px auto 0; max-width: 620px; font-size: 20px; color: var(--muted); }
+  .mevii .buttons { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .mevii .btn {
+    display: inline-block;
+    padding: 15px 26px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .mevii .btn-main { background: var(--pink); color: var(--white); }
+  .mevii .btn-quiet { border: 2px solid var(--pink); color: var(--pink); }
+  .mevii .soon { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+  /* Tier strip showpiece */
+  .mevii .tiers { margin: 44px auto 0; max-width: 520px; border-radius: 16px; overflow: hidden; display: flex; box-shadow: 0 10px 28px rgba(43, 11, 36, 0.18); }
+  .mevii .tier { flex: 1; padding: 12px 0 10px; text-align: center; color: #1a1a1a; }
+  .mevii .tier b { display: block; font-size: 26px; font-weight: 900; line-height: 1; }
+  .mevii .tier span { font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* Features */
+  .mevii .features { padding: 64px 0; background: var(--white); }
+  .mevii h2 { margin: 0; text-align: center; font-size: 34px; font-weight: 900; letter-spacing: -0.5px; }
+  .mevii .lead { margin: 10px auto 0; max-width: 560px; text-align: center; color: var(--muted); font-size: 18px; }
+  .mevii .grid { margin-top: 36px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .mevii .card { background: var(--pink-bg); border-radius: 18px; padding: 24px; }
+  .mevii .icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--pink);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  .mevii .card h3 { margin: 14px 0 6px; font-size: 20px; font-weight: 900; }
+  .mevii .card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  /* See it in action: three phone-style examples */
+  .mevii .shows { padding: 64px 0; }
+  .mevii .phones { margin-top: 36px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
+  .mevii .phone { background: var(--ink); border-radius: 34px; padding: 10px; box-shadow: 0 18px 40px rgba(43, 11, 36, 0.25); }
+  .mevii .screen { background: var(--pink-bg); border-radius: 26px; padding: 18px 16px 20px; min-height: 540px; }
+  .mevii .screen.dark { background: var(--ink); color: var(--white); }
+  .mevii .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--pink); background: var(--white); border-radius: 999px; padding: 3px 10px; }
+  .mevii .dark .tag { background: var(--pink); color: var(--white); }
+  .mevii .phone-title { margin: 10px 0 2px; font-size: 22px; font-weight: 900; color: var(--pink); line-height: 1.15; }
+  .mevii .dark .phone-title { color: #ff7aa8; }
+  .mevii .phone-text { margin: 0; font-size: 13px; color: var(--muted); }
+  .mevii .dark .phone-text { color: #f2c6d8; }
+  .mevii .bar { margin: 14px 0 6px; height: 8px; border-radius: 4px; background: var(--pink-line); overflow: hidden; }
+  .mevii .bar i { display: block; height: 100%; background: var(--pink); }
+  .mevii .small { font-size: 12px; color: var(--muted); font-weight: 700; }
+  .mevii .posters { margin-top: 12px; display: flex; gap: 6px; }
+  .mevii .poster { position: relative; flex: 1; aspect-ratio: 2 / 3; border-radius: 8px; overflow: hidden; background: var(--pink-line); }
+  .mevii .poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mevii .check { position: absolute; top: 4px; right: 4px; width: 18px; height: 18px; border-radius: 9px; background: #2e7d32; color: #fff; font-size: 11px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .mevii .friend { margin-top: 14px; background: var(--white); border-radius: 14px; padding: 10px 12px; }
+  .mevii .friend-row { display: flex; justify-content: space-between; font-size: 13px; font-weight: 800; }
+  .mevii .friend .bar { margin: 6px 0 0; height: 6px; }
+  .mevii .segs { display: flex; gap: 4px; margin-bottom: 14px; }
+  .mevii .segs i { flex: 1; height: 4px; border-radius: 2px; background: #6a3a60; }
+  .mevii .segs i.on { background: #ff7aa8; }
+  .mevii .big { margin: 18px 0 0; font-size: 64px; font-weight: 900; line-height: 1; color: #ff7aa8; }
+  .mevii .stats { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mevii .stat { background: #45143a; border-radius: 12px; padding: 10px; }
+  .mevii .stat b { display: block; font-size: 15px; }
+  .mevii .stat span { font-size: 11px; color: #f2c6d8; }
+  .mevii .podium { margin-top: 14px; display: flex; gap: 8px; align-items: flex-end; }
+  .mevii .podium div { flex: 1; text-align: center; font-size: 11px; font-weight: 800; }
+  .mevii .podium .poster { margin-bottom: 4px; border: 2px solid #ff7aa8; }
+  .mevii .q { margin: 16px 0 10px; font-size: 18px; font-weight: 900; color: var(--ink); }
+  .mevii .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .mevii .chip { font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px; background: var(--pink-soft); color: var(--ink); }
+  .mevii .chip.on { background: var(--pink); color: var(--white); }
+  .mevii .picks { margin-top: 16px; display: grid; gap: 8px; }
+  .mevii .pick { display: flex; gap: 10px; align-items: center; background: var(--white); border-radius: 12px; padding: 8px; }
+  .mevii .pick .poster { flex: 0 0 42px; }
+  .mevii .pick b { display: block; font-size: 14px; }
+  .mevii .pick span { font-size: 12px; color: var(--muted); }
+  .mevii .caption { margin: 14px 4px 0; text-align: center; font-size: 15px; font-weight: 800; }
+
+  /* Slogan band */
+  .mevii .band { background: var(--ink); color: var(--white); text-align: center; padding: 60px 0; }
+  .mevii .band p { margin: 0 auto; max-width: 720px; font-size: 34px; font-weight: 900; line-height: 1.15; letter-spacing: -0.5px; }
+  .mevii .band .pink { color: #ff7aa8; }
+  .mevii .band .btn { margin-top: 26px; }
+
+  /* Footer */
+  .mevii .foot { padding: 30px 0 40px; text-align: center; font-size: 14px; color: var(--muted); }
+  .mevii .foot nav { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; font-weight: 700; }
+  .mevii .foot p { margin: 4px 0; }
+
+  /* Phones */
+  @media (max-width: 760px) {
+    .mevii .hero { padding: 44px 0 40px; }
+    .mevii .wordmark { font-size: 44px; }
+    .mevii h1 { font-size: 32px; }
+    .mevii .sub { font-size: 17px; }
+    .mevii .grid { grid-template-columns: 1fr; }
+    .mevii .phones { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+    .mevii h2 { font-size: 28px; }
+    .mevii .band p { font-size: 26px; }
+    .mevii .tier b { font-size: 22px; }
+    .mevii .tier span { font-size: 8px; }
+  }
+</style>
+
+<div class="mevii">
+  <div class="strip" aria-hidden="true"></div>
+
+  <section class="hero">
+    <div class="wrap">
+      <img class="logo" src="https://mevii.expo.app/icon-512.png" alt="mevii logo" width="112" height="112" />
+      <p class="wordmark">mevii</p>
+      <h1>A new way to enjoy what you watch.</h1>
+      <p class="sub">
+        Your screentime just got a scoreboard. Log every movie and show, find your next favorite faster, and make
+        every watch an experience.
+      </p>
+      <div class="buttons">
+        <a class="btn btn-main" href="https://mevii.expo.app">Try mevii on the web</a>
+        <a class="btn btn-quiet" href="#mevii-examples">See it in action</a>
+      </div>
+      <p class="soon">Coming soon to the App Store.</p>
+
+      <div class="tiers" aria-label="A tier list from S, superior, to F, sucky">
+        <div class="tier" style="background: #ff7f7f"><b>S</b><span>Superior</span></div>
+        <div class="tier" style="background: #ffbf7f"><b>A</b><span>Great</span></div>
+        <div class="tier" style="background: #ffdf7f"><b>B</b><span>Good</span></div>
+        <div class="tier" style="background: #ffff7f"><b>C</b><span>Average</span></div>
+        <div class="tier" style="background: #bfff7f"><b>D</b><span>Weak</span></div>
+        <div class="tier" style="background: #7fbfff"><b>F</b><span>Sucky</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="mevii-features">
+    <div class="wrap">
+      <h2>Make your screentime count</h2>
+      <p class="lead">Everything you watch, in one place, with a little friendly competition.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+          <h3>Log it</h3>
+          <p>Rate every movie and TV season from 1 to 10, and keep reviews private or share them.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div>
+          <h3>Find it faster</h3>
+          <p>See what&rsquo;s new in theaters and on the streaming services you actually have.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><rect x="3" y="4" width="18" height="4" rx="1.5"/><rect x="3" y="10" width="13" height="4" rx="1.5"/><rect x="3" y="16" width="8" height="4" rx="1.5"/></svg></div>
+          <h3>Rank it</h3>
+          <p>Build tier lists for any franchise, studio, director, or actor, from superior to sucky.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/></svg></div>
+          <h3>Make it an experience</h3>
+          <p>Take on monthly viewing challenges, earn badges, and climb from Popcorn Rookie to Pure Cinephile.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.3C1.6 7.9 3.8 4.5 7.3 4.5c2 0 3.6 1.1 4.7 2.7 1.1-1.6 2.7-2.7 4.7-2.7 3.5 0 5.7 3.4 4.5 6.7-1.7 4.7-9.2 9.3-9.2 9.3z"/></svg></div>
+          <h3>Watch with friends</h3>
+          <p>See what your friends are watching, and do challenges together.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></div>
+          <h3>Get your Wrapped</h3>
+          <p>Your top genres, favorite actors, and hours watched, all in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shows" id="mevii-examples">
+    <div class="wrap">
+      <h2>See it in action</h2>
+      <p class="lead">A peek at three favorites: viewing challenges, your Wrapped, and the &ldquo;What should I watch?&rdquo; quiz.</p>
+      <div class="phones">
+        <div>
+          <div class="phone"><div class="screen">
+            <span class="tag">Viewing challenge</span>
+            <p class="phone-title">Leo Month</p>
+            <p class="phone-text">Watch Leonardo DiCaprio&rsquo;s 15 highest-rated movies before the month is over.</p>
+            <div class="bar"><i style="width: 47%"></i></div>
+            <span class="small">7 of 15 watched &middot; 10 days left</span>
+            <div class="posters">
+              <div class="poster"><img src="https://image.tmdb.org/t/p/w185/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg" alt="Inception" loading="lazy" /><span class="check">&#10003;</span></div>
+              <div class="poster"><img src="https://image.tmdb.org/t/p/w185/nrmXQ0zcZUL8jFLrakWc90IR8z9.jpg" alt="Shutter Island" loading="lazy" /><span class="check">&#10003;</span></div>
+              <div class="poster"><img src="https://image.tmdb.org/t/p/w185/ctjEj2xM32OvBXCq8zAdK3ZrsAj.jpg" alt="Catch Me If You Can" loading="lazy" /><span class="check">&#10003;</span></div>
+              <div class="poster"><img src="https://image.tmdb.org/t/p/w185/kW9LmvYHAaS9iA0tHmZVq8hQYoq.jpg" alt="The Wolf of Wall Street" loading="lazy" /></div>
+            </div>
+            <div class="friend">
+              <div class="friend-row"><span>Watching with Sam</span><span>9 of 15</span></div>
+              <div class="bar"><i style="width: 60%"></i></div>
+            </div>
+            <div class="friend">
+              <div class="friend-row"><span>Your reward</span><span>+250 tickets</span></div>
+              <span class="small">Finish to unlock the Better Together badge</span>
+            </div>
+          </div></div>
+          <p class="caption">Make every watch an experience</p>
+        </div>
+
+        <div>
+          <div class="phone"><div class="screen dark">
+            <div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            <span class="tag">Your 2026 Wrapped</span>
+            <p class="big">312</p>
+            <p class="phone-text">hours watched this year. That&rsquo;s 13 days straight.</p>
+            <div class="stats">
+              <div class="stat"><b>Romance</b><span>Top genre</span></div>
+              <div class="stat"><b>184</b><span>Movies logged</span></div>
+              <div class="stat"><b>Saoirse Ronan</b><span>Most-watched actor</span></div>
+              <div class="stat"><b>8.1</b><span>Average rating</span></div>
+            </div>
+            <p class="phone-text" style="margin-top: 14px; font-weight: 800; color: #ffffff">Your top 3</p>
+            <div class="podium">
+              <div><div class="poster"><img src="https://image.tmdb.org/t/p/w185/yn5ihODtZ7ofn8pDYfxCmxh8AXI.jpg" alt="Little Women" loading="lazy" /></div>2</div>
+              <div><div class="poster"><img src="https://image.tmdb.org/t/p/w185/o8UhmEbWPHmTUxP0lMuCoqNkbB3.jpg" alt="Pride and Prejudice" loading="lazy" /></div>1</div>
+              <div><div class="poster"><img src="https://image.tmdb.org/t/p/w185/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg" alt="Dune: Part Two" loading="lazy" /></div>3</div>
+            </div>
+          </div></div>
+          <p class="caption">Your year in movies, wrapped</p>
+        </div>
+
+        <div>
+          <div class="phone"><div class="screen">
+            <span class="tag">What should I watch?</span>
+            <p class="q">What&rsquo;s the vibe tonight?</p>
+            <div class="chips">
+              <span class="chip on">Make me laugh</span>
+              <span class="chip">Let me cry</span>
+              <span class="chip">Edge of my seat</span>
+              <span class="chip">Blow my mind</span>
+            </div>
+            <p class="q" style="font-size: 15px">Your 3 picks, on your services</p>
+            <div class="picks">
+              <div class="pick"><div class="poster"><img src="https://image.tmdb.org/t/p/w185/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg" alt="10 Things I Hate About You" loading="lazy" /></div><div><b>10 Things I Hate About You</b><span>1999 &middot; On Disney+</span></div></div>
+              <div class="pick"><div class="poster"><img src="https://image.tmdb.org/t/p/w185/2ZkuQXvVhh45uSvkBej4S7Ix1NJ.jpg" alt="Mean Girls" loading="lazy" /></div><div><b>Mean Girls</b><span>2004 &middot; On Paramount+</span></div></div>
+              <div class="pick"><div class="poster"><img src="https://image.tmdb.org/t/p/w185/1XxL4LJ5WHdrcYcihEZUCgNCpAW.jpg" alt="Crazy Rich Asians" loading="lazy" /></div><div><b>Crazy Rich Asians</b><span>2018 &middot; On HBO Max</span></div></div>
+            </div>
+          </div></div>
+          <p class="caption">Spend less time choosing</p>
+        </div>
+      </div>
+      <p class="lead" style="font-size: 13px; margin-top: 22px">Examples for illustration. Your challenges, picks, and Wrapped come from what you watch and the services you have.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p>Spend less time choosing, <span class="pink">more time watching.</span></p>
+      <a class="btn btn-main" href="https://mevii.expo.app">Start your log</a>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"></div>
+
+  <footer class="foot">
+    <div class="wrap">
+      <nav>
+        <a href="https://mevii.expo.app/privacy">Privacy policy</a>
+        <a href="https://mevii.expo.app/about">About &amp; credits</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact us</a>
+        <a href="mailto:mevii-support@meviiapp.com">mevii-support@meviiapp.com</a>
+      </nav>
+      <p>Movie and TV data from TMDB. Streaming availability from JustWatch.</p>
+      <p>&copy; 2026 mevii</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

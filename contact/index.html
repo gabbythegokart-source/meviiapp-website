@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact mevii</title>
+  <meta name="description" content="Questions, ideas, or something to report? Get in touch with the mevii team." />
+  <meta property="og:title" content="Contact mevii" />
+  <meta property="og:description" content="Questions, ideas, or something to report? Get in touch with the mevii team." />
+  <meta property="og:image" content="https://meviiapp.com/logo.png" />
+  <meta name="theme-color" content="#2B0B24" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <style>html, body { margin: 0; padding: 0; background: #ffe4ef; } html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+<style>
+  .mevii {
+    --pink-bg: #ffe4ef;
+    --pink-soft: #ffcadf;
+    --pink-line: #f2a0c2;
+    --pink: #c2185b;
+    --ink: #2b0b24;
+    --muted: #6b3a5c;
+    --white: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--pink-bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mevii *,
+  .mevii *::before,
+  .mevii *::after { box-sizing: border-box; }
+  .mevii a { color: inherit; }
+  .mevii .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* Film strip edge, like the logo */
+  .mevii .strip {
+    height: 26px;
+    background: var(--ink);
+    background-image: repeating-linear-gradient(90deg, transparent 0 14px, var(--pink-bg) 14px 32px, transparent 32px 46px);
+    background-size: 46px 10px;
+    background-repeat: repeat-x;
+    background-position: 0 center;
+  }
+
+  /* Hero */
+  .mevii .hero { padding: 64px 0 56px; text-align: center; }
+  .mevii .logo { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 14px 36px rgba(43, 11, 36, 0.25); }
+  .mevii .wordmark { margin: 18px 0 0; font-size: 56px; font-weight: 900; letter-spacing: -2px; color: var(--pink); line-height: 1; }
+  .mevii h1 { margin: 18px auto 0; max-width: 760px; font-size: 44px; line-height: 1.1; font-weight: 900; letter-spacing: -1px; }
+  .mevii .sub { margin: 18px auto 0; max-width: 620px; font-size: 20px; color: var(--muted); }
+  .mevii .buttons { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .mevii .btn {
+    display: inline-block;
+    padding: 15px 26px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .mevii .btn-main { background: var(--pink); color: var(--white); }
+  .mevii .btn-quiet { border: 2px solid var(--pink); color: var(--pink); }
+  .mevii .soon { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+  /* Tier strip showpiece */
+  .mevii .tiers { margin: 44px auto 0; max-width: 520px; border-radius: 16px; overflow: hidden; display: flex; box-shadow: 0 10px 28px rgba(43, 11, 36, 0.18); }
+  .mevii .tier { flex: 1; padding: 12px 0 10px; text-align: center; color: #1a1a1a; }
+  .mevii .tier b { display: block; font-size: 26px; font-weight: 900; line-height: 1; }
+  .mevii .tier span { font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* Features */
+  .mevii .features { padding: 64px 0; background: var(--white); }
+  .mevii h2 { margin: 0; text-align: center; font-size: 34px; font-weight: 900; letter-spacing: -0.5px; }
+  .mevii .lead { margin: 10px auto 0; max-width: 560px; text-align: center; color: var(--muted); font-size: 18px; }
+  .mevii .grid { margin-top: 36px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .mevii .card { background: var(--pink-bg); border-radius: 18px; padding: 24px; }
+  .mevii .icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--pink);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  .mevii .card h3 { margin: 14px 0 6px; font-size: 20px; font-weight: 900; }
+  .mevii .card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  /* See it in action: three phone-style examples */
+  .mevii .shows { padding: 64px 0; }
+  .mevii .phones { margin-top: 36px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
+  .mevii .phone { background: var(--ink); border-radius: 34px; padding: 10px; box-shadow: 0 18px 40px rgba(43, 11, 36, 0.25); }
+  .mevii .screen { background: var(--pink-bg); border-radius: 26px; padding: 18px 16px 20px; min-height: 540px; }
+  .mevii .screen.dark { background: var(--ink); color: var(--white); }
+  .mevii .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--pink); background: var(--white); border-radius: 999px; padding: 3px 10px; }
+  .mevii .dark .tag { background: var(--pink); color: var(--white); }
+  .mevii .phone-title { margin: 10px 0 2px; font-size: 22px; font-weight: 900; color: var(--pink); line-height: 1.15; }
+  .mevii .dark .phone-title { color: #ff7aa8; }
+  .mevii .phone-text { margin: 0; font-size: 13px; color: var(--muted); }
+  .mevii .dark .phone-text { color: #f2c6d8; }
+  .mevii .bar { margin: 14px 0 6px; height: 8px; border-radius: 4px; background: var(--pink-line); overflow: hidden; }
+  .mevii .bar i { display: block; height: 100%; background: var(--pink); }
+  .mevii .small { font-size: 12px; color: var(--muted); font-weight: 700; }
+  .mevii .posters { margin-top: 12px; display: flex; gap: 6px; }
+  .mevii .poster { position: relative; flex: 1; aspect-ratio: 2 / 3; border-radius: 8px; overflow: hidden; background: var(--pink-line); }
+  .mevii .poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mevii .check { position: absolute; top: 4px; right: 4px; width: 18px; height: 18px; border-radius: 9px; background: #2e7d32; color: #fff; font-size: 11px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .mevii .friend { margin-top: 14px; background: var(--white); border-radius: 14px; padding: 10px 12px; }
+  .mevii .friend-row { display: flex; justify-content: space-between; font-size: 13px; font-weight: 800; }
+  .mevii .friend .bar { margin: 6px 0 0; height: 6px; }
+  .mevii .segs { display: flex; gap: 4px; margin-bottom: 14px; }
+  .mevii .segs i { flex: 1; height: 4px; border-radius: 2px; background: #6a3a60; }
+  .mevii .segs i.on { background: #ff7aa8; }
+  .mevii .big { margin: 18px 0 0; font-size: 64px; font-weight: 900; line-height: 1; color: #ff7aa8; }
+  .mevii .stats { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mevii .stat { background: #45143a; border-radius: 12px; padding: 10px; }
+  .mevii .stat b { display: block; font-size: 15px; }
+  .mevii .stat span { font-size: 11px; color: #f2c6d8; }
+  .mevii .podium { margin-top: 14px; display: flex; gap: 8px; align-items: flex-end; }
+  .mevii .podium div { flex: 1; text-align: center; font-size: 11px; font-weight: 800; }
+  .mevii .podium .poster { margin-bottom: 4px; border: 2px solid #ff7aa8; }
+  .mevii .q { margin: 16px 0 10px; font-size: 18px; font-weight: 900; color: var(--ink); }
+  .mevii .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .mevii .chip { font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 999px; background: var(--pink-soft); color: var(--ink); }
+  .mevii .chip.on { background: var(--pink); color: var(--white); }
+  .mevii .picks { margin-top: 16px; display: grid; gap: 8px; }
+  .mevii .pick { display: flex; gap: 10px; align-items: center; background: var(--white); border-radius: 12px; padding: 8px; }
+  .mevii .pick .poster { flex: 0 0 42px; }
+  .mevii .pick b { display: block; font-size: 14px; }
+  .mevii .pick span { font-size: 12px; color: var(--muted); }
+  .mevii .caption { margin: 14px 4px 0; text-align: center; font-size: 15px; font-weight: 800; }
+
+  /* Slogan band */
+  .mevii .band { background: var(--ink); color: var(--white); text-align: center; padding: 60px 0; }
+  .mevii .band p { margin: 0 auto; max-width: 720px; font-size: 34px; font-weight: 900; line-height: 1.15; letter-spacing: -0.5px; }
+  .mevii .band .pink { color: #ff7aa8; }
+  .mevii .band .btn { margin-top: 26px; }
+
+  /* Footer */
+  .mevii .foot { padding: 30px 0 40px; text-align: center; font-size: 14px; color: var(--muted); }
+  .mevii .foot nav { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; font-weight: 700; }
+  .mevii .foot p { margin: 4px 0; }
+
+  /* Phones */
+  @media (max-width: 760px) {
+    .mevii .hero { padding: 44px 0 40px; }
+    .mevii .wordmark { font-size: 44px; }
+    .mevii h1 { font-size: 32px; }
+    .mevii .sub { font-size: 17px; }
+    .mevii .grid { grid-template-columns: 1fr; }
+    .mevii .phones { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+    .mevii h2 { font-size: 28px; }
+    .mevii .band p { font-size: 26px; }
+    .mevii .tier b { font-size: 22px; }
+    .mevii .tier span { font-size: 8px; }
+  }
+</style>
+<style>
+  .mevii .contact-hero { padding: 56px 0 40px; text-align: center; }
+  .mevii .contact-hero .logo { width: 84px; height: 84px; border-radius: 20px; }
+  .mevii .email-big { display: inline-block; margin-top: 18px; font-size: 22px; font-weight: 900; color: var(--pink); text-decoration: underline; word-break: break-all; }
+  .mevii .topics { padding: 8px 0 56px; }
+  .mevii .topic { display: block; text-decoration: none; background: var(--white); border-radius: 18px; padding: 22px; border: 2px solid transparent; }
+  .mevii .topic:hover { border-color: var(--pink); }
+  .mevii .topic h3 { margin: 14px 0 6px; font-size: 19px; font-weight: 900; }
+  .mevii .topic p { margin: 0; color: var(--muted); font-size: 15px; }
+  .mevii .topic .go { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 800; color: var(--pink); }
+  .mevii .faq { padding: 56px 0; background: var(--white); }
+  .mevii .faq-list { max-width: 720px; margin: 28px auto 0; display: grid; gap: 12px; }
+  .mevii .faq details { background: var(--pink-bg); border-radius: 14px; padding: 16px 18px; }
+  .mevii .faq summary { cursor: pointer; font-size: 17px; font-weight: 800; }
+  .mevii .faq details p { margin: 10px 0 0; color: var(--muted); font-size: 15px; }
+  .mevii .note { margin: 22px auto 0; max-width: 620px; text-align: center; font-size: 14px; color: var(--muted); }
+</style>
+
+<div class="mevii">
+  <div class="strip" aria-hidden="true"></div>
+
+  <section class="contact-hero">
+    <div class="wrap">
+      <img class="logo" src="https://mevii.expo.app/icon-512.png" alt="mevii logo" width="84" height="84" />
+      <h1>Contact us</h1>
+      <p class="sub">Questions, ideas, or something to report? We read every message and usually reply within 2 business days.</p>
+      <a class="email-big" href="mailto:mevii-support@meviiapp.com">mevii-support@meviiapp.com</a>
+    </div>
+  </section>
+
+  <section class="topics">
+    <div class="wrap">
+      <div class="grid">
+        <a class="topic" href="mailto:mevii-support@meviiapp.com?subject=mevii%20help&amp;body=Hi%20mevii%20team%2C%0A%0AMy%20username%3A%20%0AWhat%20happened%3A%20%0A">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path fill="#c2185b" d="M12 17.5a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm1.1-4.4h-2.2c0-2.8 2.7-2.7 2.7-4.4 0-.9-.7-1.5-1.6-1.5-1 0-1.6.6-1.7 1.6H8.1C8.2 6.6 9.9 5.2 12 5.2c2.2 0 3.8 1.3 3.8 3.4 0 2.6-2.7 2.7-2.7 4.5z"/></svg></div>
+          <h3>Help with the app</h3>
+          <p>Something not working, a question about a feature, or trouble signing in.</p>
+          <span class="go">Email us &rarr;</span>
+        </a>
+        <a class="topic" href="mailto:mevii-support@meviiapp.com?subject=Privacy%20request&amp;body=Hi%20mevii%20team%2C%0A%0AMy%20username%3A%20%0AMy%20request%3A%20%0A">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M7 10V7.5a5 5 0 0 1 10 0V10h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2zm2 0h6V7.5a3 3 0 0 0-6 0z"/></svg></div>
+          <h3>Privacy and your account</h3>
+          <p>Ask what we keep about you, get a copy of your data, or delete your account.</p>
+          <span class="go">Email us &rarr;</span>
+        </a>
+        <a class="topic" href="mailto:mevii-support@meviiapp.com?subject=Report&amp;body=Hi%20mevii%20team%2C%0A%0AUsername%20I%20am%20reporting%3A%20%0AWhat%20happened%3A%20%0A">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M5 3h2v18H5zM8 4h11l-2.5 4L19 12H8z"/></svg></div>
+          <h3>Report a problem with someone</h3>
+          <p>Report a review, a username, or behavior that breaks the rules. Include the username if you can.</p>
+          <span class="go">Email us &rarr;</span>
+        </a>
+        <a class="topic" href="mailto:mevii-support@meviiapp.com?subject=Feedback&amp;body=Hi%20mevii%20team%2C%0A%0AMy%20idea%3A%20%0A">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M9 21h6v-1.5H9zm3-19a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"/></svg></div>
+          <h3>Ideas and feedback</h3>
+          <p>A feature you want, a challenge idea, or something you love.</p>
+          <span class="go">Email us &rarr;</span>
+        </a>
+        <a class="topic" href="mailto:mevii-support@meviiapp.com?subject=Movie%20info&amp;body=Hi%20mevii%20team%2C%0A%0ATitle%3A%20%0AWhat%20looks%20wrong%3A%20%0A">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v2h2V5zm12 0v2h2V5zM5 9v2h2V9zm12 0v2h2V9zM5 13v2h2v-2zm12 0v2h2v-2zM5 17v2h2v-2zm12 0v2h2v-2zM9 5v14h6V5z"/></svg></div>
+          <h3>Missing or wrong movie info</h3>
+          <p>A title, poster, or streaming service that looks wrong.</p>
+          <span class="go">Email us &rarr;</span>
+        </a>
+        <a class="topic" href="mailto:mevii-support@meviiapp.com?subject=Press%20or%20partnership&amp;body=Hi%20mevii%20team%2C%0A%0A">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z"/></svg></div>
+          <h3>Press and partnerships</h3>
+          <p>Writing about mevii, or want to work together.</p>
+          <span class="go">Email us &rarr;</span>
+        </a>
+      </div>
+      <p class="note">Each card opens an email to us with the subject filled in. Including your mevii username helps us find your account faster. Never send your password.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <h2>Quick answers</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How do I delete my account?</summary>
+          <p>In the app, open My mevii, scroll to the bottom, and tap Delete account. It erases everything right away. You can also email us and we&rsquo;ll do it for you.</p>
+        </details>
+        <details>
+          <summary>How do I report or block someone?</summary>
+          <p>On a review, tap the &hellip; button, then Report or Block. For a person, go to My mevii, then Friends, and tap Options on a friend or Report or block on a request.</p>
+        </details>
+        <details>
+          <summary>I didn&rsquo;t get my confirmation email.</summary>
+          <p>Check your spam or junk folder for an email from mevii. Still nothing after a few minutes? Email us with the address you signed up with.</p>
+        </details>
+        <details>
+          <summary>Why isn&rsquo;t something showing on my streaming services?</summary>
+          <p>mevii shows what&rsquo;s streaming in the U.S., using data from JustWatch through TMDB. Make sure your services are picked in My mevii. Availability changes often, so a title can come and go.</p>
+        </details>
+        <details>
+          <summary>Is mevii free?</summary>
+          <p>Yes. There are no ads and we don&rsquo;t sell your data.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"></div>
+
+  <footer class="foot">
+    <div class="wrap">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="https://mevii.expo.app">Open mevii</a>
+        <a href="https://mevii.expo.app/privacy">Privacy policy</a>
+        <a href="https://mevii.expo.app/about">About &amp; credits</a>
+      </nav>
+      <p>Movie and TV data from TMDB. Streaming availability from JustWatch.</p>
+      <p>&copy; 2026 mevii</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
