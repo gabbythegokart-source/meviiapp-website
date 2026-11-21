@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Safari on iPhone shows an "Open in the App Store" banner. -->
+  <meta name="apple-itunes-app" content="app-id=6837360038" />
   <title>mevii: a new way to enjoy what you watch</title>
   <meta name="description" content="Your screentime just got a scoreboard. Log every movie and show, find your next favorite faster, and make every watch an experience." />
   <meta property="og:title" content="mevii: a new way to enjoy what you watch" />
@@ -63,7 +65,8 @@
   }
   .mevii .btn-main { background: var(--pink); color: var(--white); }
   .mevii .btn-quiet { border: 2px solid var(--pink); color: var(--pink); }
-  .mevii .soon { margin-top: 14px; font-size: 14px; color: var(--muted); }
+  .mevii .soon { margin-top: 14px; font-size: 14px; line-height: 1.6; color: var(--muted); }
+  .mevii .soon a { color: var(--pink); font-weight: 700; }
 
   /* Tier strip showpiece */
   .mevii .tiers { margin: 44px auto 0; max-width: 520px; border-radius: 16px; overflow: hidden; display: flex; box-shadow: 0 10px 28px rgba(43, 11, 36, 0.18); }
@@ -202,10 +205,13 @@
         every watch an experience.
       </p>
       <div class="buttons">
-        <a class="btn btn-main" href="https://mevii.expo.app">Try mevii on the web</a>
+        <a class="btn btn-main" href="https://apps.apple.com/us/app/mevii-movie-tv-tracker/id6837360038">Download on the App Store</a>
         <a class="btn btn-quiet" href="#mevii-examples">See it in action</a>
       </div>
-      <p class="soon">Coming soon to the App Store.</p>
+      <p class="soon">
+        Free on iPhone. No iPhone? <a href="https://mevii.expo.app">Try mevii on the web</a>.
+        Follow along on <a href="https://www.instagram.com/get.mevii/" target="_blank" rel="noopener">Instagram @get.mevii</a>.
+      </p>
 
       <div class="tiers" aria-label="A tier list from S, superior, to F, sucky">
         <div class="tier" style="background: #ff7f7f"><b>S</b><span>Superior</span></div>
@@ -336,7 +342,7 @@
   <section class="band">
     <div class="wrap">
       <p>Spend less time choosing, <span class="pink">more time watching.</span></p>
-      <a class="btn btn-main" href="https://mevii.expo.app">Start your log</a>
+      <a class="btn btn-main" href="https://apps.apple.com/us/app/mevii-movie-tv-tracker/id6837360038">Get mevii on the App Store</a>
     </div>
   </section>
 
@@ -349,6 +355,7 @@
         <a href="https://mevii.expo.app/about">About &amp; credits</a>
         <a href="/about">About</a>
         <a href="/contact">Contact us</a>
+        <a href="https://www.instagram.com/get.mevii/" target="_blank" rel="noopener">Instagram @get.mevii</a>
         <a href="mailto:mevii-support@meviiapp.com">mevii-support@meviiapp.com</a>
       </nav>
       <p>Movie and TV data from TMDB. Streaming availability from JustWatch.</p>
