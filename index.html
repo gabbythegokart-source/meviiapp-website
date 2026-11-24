@@ -164,6 +164,22 @@
     .mevii .tier span { font-size: 8px; }
   }
 
+
+  /* New in 1.0.2 */
+  .mevii .whatsnew { padding: 60px 0 64px; background: var(--ink); color: var(--white); scroll-margin-top: 56px; }
+  .mevii .whatsnew h2 { color: var(--white); }
+  .mevii .whatsnew h2 .pink { color: #ff7aa8; }
+  .mevii .whatsnew .lead { color: #f2c6d8; }
+  .mevii .newtag { display: block; width: fit-content; margin: 0 auto 14px; font-size: 13px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); background: #ffc93c; border-radius: 999px; padding: 6px 14px; }
+  .mevii .whatsnew .card { background: #45143a; }
+  .mevii .whatsnew .card h3 { color: var(--white); }
+  .mevii .whatsnew .card p { color: #f2c6d8; }
+  .mevii .whatsnew .icon { background: #ff3d7f; }
+  .mevii .whatsnew .buttons { margin-top: 34px; }
+  .mevii .whatsnew .soon { color: #f2c6d8; text-align: center; }
+  .mevii .whatsnew .soon a { color: #ff7aa8; }
+  .mevii .newlink { display: inline-block; margin-top: 16px; font-size: 15px; font-weight: 800; color: var(--pink); text-decoration: none; background: var(--pink-soft); padding: 7px 14px; border-radius: 999px; }
+
   /* Top navigation, pinned while scrolling */
   .mevii .topnav { position: sticky; top: 0; z-index: 50; background: var(--ink); }
   .mevii .topnav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 60px; }
@@ -208,6 +224,7 @@
         <a class="btn btn-main" href="https://apps.apple.com/us/app/mevii-movie-tv-tracker/id6837360038">Download on the App Store</a>
         <a class="btn btn-quiet" href="#mevii-examples">See it in action</a>
       </div>
+      <a class="newlink" href="#whats-new">&#10024; New in 1.0.2: lists, friend profiles &amp; more &rarr;</a>
       <p class="soon">
         Free on iPhone. No iPhone? <a href="https://mevii.expo.app">Try mevii on the web</a>.
         Follow along on <a href="https://www.instagram.com/get.mevii/" target="_blank" rel="noopener">Instagram @get.mevii</a>.
@@ -221,6 +238,50 @@
         <div class="tier" style="background: #bfff7f"><b>D</b><span>Weak</span></div>
         <div class="tier" style="background: #7fbfff"><b>F</b><span>Sucky</span></div>
       </div>
+    </div>
+  </section>
+
+  <section class="whatsnew" id="whats-new">
+    <div class="wrap">
+      <span class="newtag">New in version 1.0.2</span>
+      <h2>mevii just got <span class="pink">so much better</span></h2>
+      <p class="lead">Already have mevii? Update it in the App Store to get all of this.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><rect x="3" y="4" width="3" height="3" rx="1"/><rect x="8" y="4.5" width="13" height="2" rx="1"/><rect x="3" y="10.5" width="3" height="3" rx="1"/><rect x="8" y="11" width="13" height="2" rx="1"/><rect x="3" y="17" width="3" height="3" rx="1"/><rect x="8" y="17.5" width="13" height="2" rx="1"/></svg></div>
+          <h3>Your own lists</h3>
+          <p>Make a list of anything, like &ldquo;2000s teen dramas,&rdquo; put it in your order, share it with friends, and turn it into a tier list.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M2.5 11.5L21 3l-6.5 18-3.2-7.3z"/></svg></div>
+          <h3>Recommend to friends</h3>
+          <p>Send a title to one friend or all of them. They can add it to their watchlist, and you&rsquo;ll see what they said.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></div>
+          <h3>Friend profiles</h3>
+          <p>See a friend&rsquo;s rank, favorites, lists, and what they&rsquo;re watching. You choose what yours shows.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><rect x="3" y="5" width="18" height="5" rx="2" fill="#2b0b24" opacity=".35"/><rect x="7" y="2.5" width="2" height="5" rx="1"/><rect x="15" y="2.5" width="2" height="5" rx="1"/></svg></div>
+          <h3>Monday top picks</h3>
+          <p>Ten fresh picks every Monday: what&rsquo;s new in theaters, on streaming, and worth catching up on.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><rect x="2.5" y="5" width="19" height="12" rx="2.5"/><rect x="8" y="19" width="8" height="2" rx="1"/></svg></div>
+          <h3>Currently watching</h3>
+          <p>Keep the shows you&rsquo;re in the middle of on your Home screen, with the season you&rsquo;re on.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+          <h3>Favorites and vibes</h3>
+          <p>Star the titles you love, and share your top 10 with a vibe that describes your taste.</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <a class="btn btn-main" href="https://apps.apple.com/us/app/mevii-movie-tv-tracker/id6837360038">Update in the App Store</a>
+      </div>
+      <p class="soon">On the web? It&rsquo;s already there at <a href="https://mevii.expo.app">mevii.expo.app</a>.</p>
     </div>
   </section>
 
